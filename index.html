@@ -10,10 +10,12 @@
       color: #fff;
       padding: 20px;
     }
+
     h1 {
       color: #00ff99;
       text-align: center;
     }
+
     .match {
       background: #1e1e1e;
       padding: 15px;
@@ -21,11 +23,13 @@
       border-radius: 6px;
       max-width: 600px;
     }
+
     .match a {
       color: #00e6e6;
       font-size: 18px;
       text-decoration: none;
     }
+
     .match a:hover {
       text-decoration: underline;
     }
@@ -33,19 +37,45 @@
 </head>
 <body>
 
-<h1>🔥 Dooball Live - Watch Football Free</h1>
+  <h1>🔥 Dooball Live - Watch Football Free</h1>
 
-<div class="match">
-  <a href="https://dooball66b.com/?match_id=1390288" target="_blank">Feyenoord vs PEC Zwolle 🔴 Watch Now</a>
-</div>
+  <!-- Match container where links will be dynamically inserted -->
+  <div id="match-container"></div>
 
-<!-- You can add more matches below -->
-<!-- Example of how you can add another match -->
-<!--
-<div class="match">
-  <a href="your-stream-link-here" target="_blank">Your Next Match 🔴 Watch Now</a>
-</div>
--->
+  <script>
+    // Updated match data for only today's live matches
+    const matches = [
+      {
+        name: "Feyenoord vs PEC Zwolle",
+        url: "https://dooball66b.com/?match_id=1390288"
+      },
+      {
+        name: "Paris Saint-Germain vs Nice",
+        url: "https://dooball66b.com/?match_id=1390287"
+      },
+      {
+        name: "Famalicao vs SC Braga",
+        url: "https://dooball66b.com/?match_id=1390323"
+      }
+    ];
+
+    // Get the match container div
+    const container = document.getElementById('match-container');
+
+    // Loop through matches and create HTML elements
+    matches.forEach(match => {
+      const matchDiv = document.createElement('div');
+      matchDiv.classList.add('match');
+      
+      const matchLink = document.createElement('a');
+      matchLink.href = match.url;
+      matchLink.target = "_blank";
+      matchLink.innerText = `${match.name} 🔴 Watch Now`;
+
+      matchDiv.appendChild(matchLink);
+      container.appendChild(matchDiv);
+    });
+  </script>
 
 </body>
 </html>
