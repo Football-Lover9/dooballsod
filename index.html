@@ -2,7 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dooball Live - Football Streams</title>
+
+  <!-- Google site verification -->
+  <meta name="google-site-verification" content="1LGvaN1IiGGw0psSwYApKO6jGgk4GfD0x8XjJD72kac" />
+
+  <!-- SEO meta description -->
+  <meta name="description" content="Watch Dooball football live matches for free. Updated daily with fresh match links.">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -43,36 +51,50 @@
   <div id="match-container"></div>
 
   <script>
-    // Updated match data for only today's live matches
+    // Match data for today
     const matches = [
       {
-        name: "Feyenoord vs PEC Zwolle",
-        url: "https://dooball66b.com/?match_id=1390288"
+        name: "นครศรียูไนเต็ด VS เกษตรศาสตร์ เอฟซี",
+        url: ""
       },
       {
-        name: "Paris Saint-Germain vs Nice",
-        url: "https://dooball66b.com/?match_id=1390287"
+        name: "Chelsea vs Everton",
+        url: ""
       },
       {
-        name: "Famalicao vs SC Braga",
-        url: "https://dooball66b.com/?match_id=1390323"
+        name: "Wolves vs Leicester City",
+        url: ""
       },
       {
-        name: "Stoke City vs Sheffield United",
-        url: "https://dooball66b.com/?match_id=1390292"
+        name: "Newcastle vs Ipswich Town",
+        url: ""
+      },
+      {
+        name: "Bayern Munich vs Mainz 05",
+        url: ""
+      },
+      {
+        name: "Hoffenheim vs Borussia Dortmund",
+        url: ""
+      },
+      {
+        name: "Eintracht Frankfurt vs RB Leipzig",
+        url: ""
+      },
+      {
+        name: "Crystal Palace vs Aston Villa",
+        url: ""
       }
     ];
 
-    // Get the match container div
     const container = document.getElementById('match-container');
 
-    // Loop through matches and create HTML elements
     matches.forEach(match => {
       const matchDiv = document.createElement('div');
       matchDiv.classList.add('match');
-      
+
       const matchLink = document.createElement('a');
-      matchLink.href = match.url;
+      matchLink.href = match.url || "#";
       matchLink.target = "_blank";
       matchLink.innerText = `${match.name} 🔴 Watch Now`;
 
