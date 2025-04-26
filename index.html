@@ -41,6 +41,14 @@
     .match a:hover {
       text-decoration: underline;
     }
+
+    /* Positioning the visitor counter at the bottom right */
+    #visitor-counter {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 9999;
+    }
   </style>
 </head>
 <body>
@@ -84,6 +92,7 @@
       matchLink.href = match.url;
       matchLink.target = "_blank";
 
+      // Separate time and match text
       const [time, ...rest] = match.name.split(" ");
       const matchText = rest.join(" ");
 
@@ -94,14 +103,12 @@
     });
   </script>
 
-  <!-- AdsOK ad script -->
-  <script>
-    (function(s,u,z,p){
-      s.src='https://'+z+'/400/'+p;
-      s.async=true;
-      u.appendChild(s);
-    })(document.createElement('script'),document.body,'adsok.net','b27af4f7-6992-4906-bac6-c33b201f5877');
-  </script>
+  <!-- Visitor Counter -->
+  <div id="visitor-counter">
+    <a href="https://www.hitwebcounter.com" target="_blank" title="Visitor Counter">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=1234567&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" alt="web counter" />
+    </a>
+  </div>
 
 </body>
 </html>
