@@ -45,45 +45,24 @@
 </head>
 <body>
 
-  <h1>🔥 Dooball Live - Watch Football Free</h1>
+  <h1>
+    🔥 <span style="color: #00ff99;">Dooball Live</span> 🔥<br>
+    <span style="text-decoration: underline; font-weight: normal;">Watch Football Free</span>
+  </h1>
 
   <!-- Match container where links will be dynamically inserted -->
   <div id="match-container"></div>
 
   <script>
-    // Match data for today
+    // Match data for today (sorted by time)
     const matches = [
       {
-        name: "นครศรียูไนเต็ด VS เกษตรศาสตร์ เอฟซี",
-        url: ""
+        name: "23:00 Gaziantep FK vs Fenerbahce",
+        url: "https://dooball66b.com/?match_id=1391048"
       },
       {
-        name: "Chelsea vs Everton",
-        url: ""
-      },
-      {
-        name: "Wolves vs Leicester City",
-        url: ""
-      },
-      {
-        name: "Newcastle vs Ipswich Town",
-        url: ""
-      },
-      {
-        name: "Bayern Munich vs Mainz 05",
-        url: ""
-      },
-      {
-        name: "Hoffenheim vs Borussia Dortmund",
-        url: ""
-      },
-      {
-        name: "Eintracht Frankfurt vs RB Leipzig",
-        url: ""
-      },
-      {
-        name: "Crystal Palace vs Aston Villa",
-        url: ""
+        name: "23:15 Crystal Palace vs Aston Villa",
+        url: "https://dooball66b.com/?match_id=1391880"
       }
     ];
 
@@ -94,7 +73,7 @@
       matchDiv.classList.add('match');
 
       const matchLink = document.createElement('a');
-      matchLink.href = match.url || "#";
+      matchLink.href = match.url;
       matchLink.target = "_blank";
       matchLink.innerText = `${match.name} 🔴 Watch Now`;
 
