@@ -83,7 +83,12 @@
       const matchLink = document.createElement('a');
       matchLink.href = match.url;
       matchLink.target = "_blank";
-      matchLink.innerText = `${match.name} 🔴 Watch Now`;
+
+      // Separate time and match text
+      const [time, ...rest] = match.name.split(" ");
+      const matchText = rest.join(" ");
+
+      matchLink.innerHTML = `<span style="color: #ffcc00;">${time}</span> ${matchText} 🔴 Watch Now`;
 
       matchDiv.appendChild(matchLink);
       container.appendChild(matchDiv);
