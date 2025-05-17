@@ -1,52 +1,141 @@
-<script>
-  // Match data
-  const matches = [
-    {
-      name: "23:00 Hapoel Tel Aviv VS Hapoel Ramatkan",
-      url: ""
-    },
-    {
-      name: "23:30 Udinese VS Bologna",
-      url: ""
-    },
-    {
-      name: "01:45 Lazio VS Parma",
-      url: ""
-    },
-    {
-      name: "01:45 Verona VS Cagliari",
-      url: ""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dooball Live - Football Streams</title>
+
+  <meta name="google-site-verification" content="1LGvaN1IiGGw0psSwYApKO6jGgk4GfD0x8XjJD72kac" />
+  <meta name="description" content="Watch Dooball football live matches for free. Updated daily with fresh match links.">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('https://cdn.pixabay.com/photo/2016/11/29/02/01/grass-1869406_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      padding: 20px;
     }
-  ];
 
-  const container = document.getElementById('match-container');
+    h1 {
+      color: #00ff99;
+      text-align: center;
+    }
 
-  matches.forEach(match => {
-    const matchDiv = document.createElement('div');
-    matchDiv.classList.add('match');
+    .match {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      margin: 10px auto;
+      border-radius: 6px;
+      max-width: 600px;
+    }
 
-    const matchLink = document.createElement('a');
-    matchLink.href = match.url;
-    matchLink.target = "_blank";
+    .match a {
+      color: #00e6e6;
+      font-size: 18px;
+      text-decoration: none;
+    }
 
-    const [time, ...rest] = match.name.split(" ");
-    const matchText = rest.join(" ");
+    .match a:hover {
+      text-decoration: underline;
+    }
 
-    matchLink.innerHTML = `<span style="color: #ffcc00;">${time}</span> ${matchText} 🔴 Watch Now`;
+    #visitor-counter {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 9999;
+    }
 
-    matchDiv.appendChild(matchLink);
-    container.appendChild(matchDiv);
-  });
+    #flag-counter {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 9999;
+    }
 
-  // Add movie link
-  const movieDiv = document.createElement('div');
-  movieDiv.classList.add('match');
+    .thank-you {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
 
-  const movieLink = document.createElement('a');
-  movieLink.href = "https://www.imdb.com/?ref_=nv_home";
-  movieLink.target = "_blank";
-  movieLink.innerHTML = `🎬 <span style="color: #ffcc00;">Watch Movie Free</span>`;
+  <h1>
+    🔥 <span style="color: #00ff99;">Dooball Live</span> 🔥<br>
+    <span style="text-decoration: underline; font-weight: normal;">Watch Football Free</span>
+  </h1>
 
-  movieDiv.appendChild(movieLink);
-  container.appendChild(movieDiv);
-</script>
+  <!-- Match container -->
+  <div id="match-container"></div>
+
+  <!-- Visitor Counter -->
+  <div id="visitor-counter">
+    <a href="https://www.hitwebcounter.com" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=20512215&style=0001&nbdigits=5&type=page&initCount=0" title="Counter Widget" alt="Visit counter For Websites" border="0" />
+    </a>
+  </div>
+
+  <!-- Flag Counter -->
+  <div id="flag-counter">
+    <a href="https://info.flagcounter.com/MpyG" target="_blank">
+      <img src="https://s01.flagcounter.com/count/MpyG/bg_FFFFFF/txt_000000/border_CCCCCC/columns_1/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
+    </a>
+  </div>
+
+  <!-- Thank you message -->
+  <div class="thank-you">
+    🙏⚽ Thank you for visiting my site! Enjoy watching football live ⚽🙏
+  </div>
+
+  <script>
+    // Match data
+    const matches = [
+      {
+        name: "23:00 Hapoel Tel Aviv VS Hapoel Ramatkan",
+        url: ""
+      },
+      {
+        name: "23:30 Udinese VS Bologna",
+        url: ""
+      },
+      {
+        name: "01:45 Lazio VS Parma",
+        url: ""
+      },
+      {
+        name: "01:45 Verona VS Cagliari",
+        url: ""
+      },
+      {
+        name: "🎬 Watch Free Movie",
+        url: "https://www.imdb.com/?ref_=nv_home"
+      }
+    ];
+
+    const container = document.getElementById('match-container');
+
+    matches.forEach(match => {
+      const matchDiv = document.createElement('div');
+      matchDiv.classList.add('match');
+
+      const matchLink = document.createElement('a');
+      matchLink.href = match.url;
+      matchLink.target = "_blank";
+
+      const [time, ...rest] = match.name.split(" ");
+      const matchText = rest.join(" ");
+
+      matchLink.innerHTML = `<span style="color: #ffcc00;">${time}</span> ${matchText} 🔴 Watch Now`;
+
+      matchDiv.appendChild(matchLink);
+      container.appendChild(matchDiv);
+    });
+  </script>
+
+</body>
+</html>
